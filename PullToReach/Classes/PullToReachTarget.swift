@@ -10,20 +10,20 @@ import UIKit
 
 private let selectionIndicatorTag = 123
 
-protocol PullToReachTarget {
+public protocol PullToReachTarget {
     func callSelector()
     func resetStyle()
     func applyStyle(isHighlighted: Bool, highlightColor: UIColor)
 }
 
 extension UIBarButtonItem: PullToReachTarget {
-    func callSelector() {
+    public func callSelector() {
         if let actionSelector = self.action {
             _ = self.target?.perform(actionSelector)
         }
     }
 
-    func resetStyle() {
+    public func resetStyle() {
         guard let selectionIndicator = addSelectionIndicatorView() else { return }
 
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: [], animations: {
@@ -31,7 +31,7 @@ extension UIBarButtonItem: PullToReachTarget {
         })
     }
 
-    func applyStyle(isHighlighted: Bool, highlightColor: UIColor) {
+    public func applyStyle(isHighlighted: Bool, highlightColor: UIColor) {
         guard let view = self.value(forKey: "view") as? UIView else { return }
         guard let selectionIndicator = addSelectionIndicatorView() else { return }
         guard let navigationBar = view.firstSuperview(ofType: UINavigationBar.self) else { return }
@@ -80,17 +80,17 @@ extension UIBarButtonItem: PullToReachTarget {
 }
 
 extension UIControl: PullToReachTarget {
-    func callSelector() {
+    public func callSelector() {
         guard let target = self.allTargets.first as NSObject? else { return }
         guard let selectorName = self.actions(forTarget: target, forControlEvent: .touchUpInside)?.first else { return }
         target.perform(NSSelectorFromString(selectorName))
     }
 
-    func resetStyle() {
+    public func resetStyle() {
 
     }
 
-    func applyStyle(isHighlighted: Bool, highlightColor: UIColor) {
+    public func applyStyle(isHighlighted: Bool, highlightColor: UIColor) {
         let scale: CGFloat = isHighlighted ? 2.25 : 1.0
         self.transform = CGAffineTransform(scaleX: scale, y: scale)
     }

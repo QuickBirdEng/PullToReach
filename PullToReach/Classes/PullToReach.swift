@@ -15,12 +15,12 @@ struct AssociatedKeys {
 private let maxOffset: CGFloat = 150
 private let initialIgnoredOffset: CGFloat = 30
 
-protocol PullToReach {
+public protocol PullToReach {
     var scrollView: UIScrollView { get }
 }
 
 @available(iOS 11.0, *)
-extension PullToReach {
+public extension PullToReach {
 
     func activatePullToReach(affectedTargets: [PullToReachTarget],
                              highlightColor: UIColor = UIColor.black.withAlphaComponent(0.1)) {
@@ -63,13 +63,13 @@ extension PullToReach {
 
 }
 
-enum PTRDirection {
+public enum PTRDirection {
     case leftToRight
     case rightToLeft
 }
 
 @available(iOS 11.0, *)
-extension PullToReach {
+public extension PullToReach {
 
     func activatePullToReach(on navigationItem: UINavigationItem,
                              direction: PTRDirection = .rightToLeft,
@@ -87,7 +87,7 @@ extension PullToReach {
 
 }
 
-extension PullToReach where Self: UITableViewController {
+public extension PullToReach where Self: UITableViewController {
     var scrollView: UIScrollView {
         return tableView
     }
