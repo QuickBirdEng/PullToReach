@@ -28,7 +28,8 @@ extension UIBarButtonItem: PullToReachTarget {
         }
     }
 
-    public func resetStyle() {
+    @objc
+    open func resetStyle() {
         guard let selectionIndicator = addSelectionIndicatorView() else { return }
 
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: [], animations: {
@@ -36,7 +37,8 @@ extension UIBarButtonItem: PullToReachTarget {
         })
     }
 
-    public func applyStyle(isHighlighted: Bool, highlightColor: UIColor) {
+    @objc
+    open func applyStyle(isHighlighted: Bool, highlightColor: UIColor) {
         guard let view = self.value(forKey: "view") as? UIView else { return }
         guard let selectionIndicator = addSelectionIndicatorView() else { return }
         guard let navigationBar = view.firstSuperview(ofType: UINavigationBar.self) else { return }
@@ -94,11 +96,13 @@ extension UIControl: PullToReachTarget {
         target.perform(NSSelectorFromString(selectorName))
     }
 
-    public func resetStyle() {
+    @objc
+    open func resetStyle() {
         self.transform = .identity
     }
 
-    public func applyStyle(isHighlighted: Bool, highlightColor: UIColor) {
+    @objc
+    open func applyStyle(isHighlighted: Bool, highlightColor: UIColor) {
         let scale: CGFloat = isHighlighted ? 2.25 : 1.0
         self.transform = CGAffineTransform(scaleX: scale, y: scale)
     }
