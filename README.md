@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/PullToReach.svg?style=flat)](https://cocoapods.org/pods/PullToReach)
 [![Platform](https://img.shields.io/cocoapods/p/PullToReach.svg?style=flat)](https://cocoapods.org/pods/PullToReach)
 
-PullToReach is a simple drag-and-drop solution for implementing the pull-to-reach functionality as seen in the music app [Soor](http://soor.app) by [Tanmay](https://twitter.com/tanmays).
+PullToReach is a simple drag-and-drop solution for implementing the pull-to-reach functionality seen in the music app [Soor](http://soor.app) by [Tanmay](https://twitter.com/tanmays).
 
 ![Screen recording](https://cdn.dribbble.com/users/793057/screenshots/4089014/iphone-x-pull-to-refresh.gif)
 
@@ -57,7 +57,7 @@ class ScalingButton: UIButton {
 }
 ```
 
-## 🚴‍♂️ Use outside of NavigationBar
+## 🚴‍♂️ Usage outside of NavigationBar
 
 Pull-To-Reach can not only be activated for the navigation items, but also for every `UIControl` independent from it position or functionality. This can be very helpful if you have non-standard views with your own controls. To define your style you can override `applyStyle` as seen above.
 
