@@ -1,0 +1,22 @@
+{
+  "name": "PullToReach",
+  "version": "0.1.0",
+  "summary": "A short description of PullToReach.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/grafele/PullToReach",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "grafele": "stefan.kofler@quickbirdstudios.com"
+  },
+  "source": {
+    "git": "https://github.com/grafele/PullToReach.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "PullToReach/Classes/**/*"
+}

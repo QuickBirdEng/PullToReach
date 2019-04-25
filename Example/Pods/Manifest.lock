@@ -1,0 +1,16 @@
+PODS:
+  - PullToReach (0.1.0)
+
+DEPENDENCIES:
+  - PullToReach (from `../`)
+
+EXTERNAL SOURCES:
+  PullToReach:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  PullToReach: 94a5089dcc7a3bc242c969752538864287b3cb9f
+
+PODFILE CHECKSUM: 253478a88a2e8b1c81915349f169fea9fbf0e77b
+
+COCOAPODS: 1.6.0.beta.2
