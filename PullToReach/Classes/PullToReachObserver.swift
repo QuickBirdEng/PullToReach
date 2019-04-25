@@ -28,6 +28,7 @@ class PullToReachObserver: NSObject {
 
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         guard let scrollView = object as? UIScrollView else { return }
+
         if keyPath == #keyPath(UIScrollView.contentOffset) {
             let scrollOffset = -(scrollView.contentOffset.y + scrollView.adjustedContentInset.top)
 

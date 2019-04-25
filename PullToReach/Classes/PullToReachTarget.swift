@@ -10,13 +10,18 @@ import UIKit
 
 private let selectionIndicatorTag = 123
 
+// MARK: - PullToReachTarget
+
 public protocol PullToReachTarget {
     func callSelector()
     func resetStyle()
     func applyStyle(isHighlighted: Bool, highlightColor: UIColor)
 }
 
+// MARK: - UIBarButtonItem: PullToReachTarget
+
 extension UIBarButtonItem: PullToReachTarget {
+
     public func callSelector() {
         if let actionSelector = self.action {
             _ = self.target?.perform(actionSelector)
@@ -79,7 +84,10 @@ extension UIBarButtonItem: PullToReachTarget {
 
 }
 
+// MARK: - UIControl: PullToReachTarget
+
 extension UIControl: PullToReachTarget {
+
     public func callSelector() {
         guard let target = self.allTargets.first as NSObject? else { return }
         guard let selectorName = self.actions(forTarget: target, forControlEvent: .touchUpInside)?.first else { return }
@@ -87,11 +95,12 @@ extension UIControl: PullToReachTarget {
     }
 
     public func resetStyle() {
-
+        self.transform = .identity
     }
 
     public func applyStyle(isHighlighted: Bool, highlightColor: UIColor) {
         let scale: CGFloat = isHighlighted ? 2.25 : 1.0
         self.transform = CGAffineTransform(scaleX: scale, y: scale)
     }
+    
 }

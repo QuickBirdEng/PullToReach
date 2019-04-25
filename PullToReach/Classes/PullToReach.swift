@@ -8,18 +8,12 @@
 
 import UIKit
 
-struct AssociatedKeys {
-    static var observer: UInt8 = 0
-}
-
-private let maxOffset: CGFloat = 150
-private let initialIgnoredOffset: CGFloat = 30
+// MARK: - PullToReach
 
 public protocol PullToReach {
     var scrollView: UIScrollView { get }
 }
 
-@available(iOS 11.0, *)
 public extension PullToReach {
 
     func activatePullToReach(affectedTargets: [PullToReachTarget],
@@ -27,34 +21,37 @@ public extension PullToReach {
         let heavyFeedbackGenerator = UIImpactFeedbackGenerator()
         let lightFeedbackGenerator = UIImpactFeedbackGenerator(style: .light)
 
-        var lastSelection: Int = -1
+        var lastSelectedIndex: Int?
 
         let observer = PullToReachObserver(scrollView: scrollView) { scrollOffset, didRelease, isTracking in
             guard scrollOffset >= initialIgnoredOffset else {
-                lastSelection = -1
+                lastSelectedIndex = nil
+
                 for target in affectedTargets {
                     target.resetStyle()
                     target.applyStyle(isHighlighted: false, highlightColor: highlightColor)
                 }
+
                 return
             }
+            
             let modifiedOffset = scrollOffset - initialIgnoredOffset
 
             let percent = min(modifiedOffset / maxOffset, 0.99)
-            let currentSelection = Int(percent * CGFloat(affectedTargets.count))
+            let currentSelectedIndex = Int(percent * CGFloat(affectedTargets.count))
 
             if didRelease {
-                affectedTargets[currentSelection].callSelector()
+                affectedTargets[currentSelectedIndex].callSelector()
                 heavyFeedbackGenerator.impactOccurred()
             }
 
-            if lastSelection != currentSelection {
+            if lastSelectedIndex != currentSelectedIndex {
                 lightFeedbackGenerator.impactOccurred()
-                lastSelection = currentSelection
+                lastSelectedIndex = currentSelectedIndex
             }
 
             for (index, target) in affectedTargets.enumerated() {
-                target.applyStyle(isHighlighted: index == currentSelection && isTracking, highlightColor: highlightColor)
+                target.applyStyle(isHighlighted: index == currentSelectedIndex && isTracking, highlightColor: highlightColor)
             }
         }
 
@@ -62,6 +59,8 @@ public extension PullToReach {
     }
 
 }
+
+// MARK: - PTRDirection
 
 public enum PTRDirection {
     case leftToRight
@@ -87,8 +86,19 @@ public extension PullToReach {
 
 }
 
+// MARK: - UITableViewController: PullToReach
+
 public extension PullToReach where Self: UITableViewController {
     var scrollView: UIScrollView {
         return tableView
     }
 }
+
+// MARK: Helpers
+
+private struct AssociatedKeys {
+    static var observer: UInt8 = 0
+}
+
+private let maxOffset: CGFloat = 150
+private let initialIgnoredOffset: CGFloat = 30
