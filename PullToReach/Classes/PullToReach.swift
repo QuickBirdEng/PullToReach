@@ -28,7 +28,6 @@ public extension PullToReach {
                 lastSelectedIndex = nil
 
                 for target in affectedTargets {
-                    target.resetStyle()
                     target.applyStyle(isHighlighted: false, highlightColor: highlightColor)
                 }
 

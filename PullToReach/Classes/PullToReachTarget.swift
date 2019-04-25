@@ -14,7 +14,6 @@ private let selectionIndicatorTag = 123
 
 public protocol PullToReachTarget {
     func callSelector()
-    func resetStyle()
     func applyStyle(isHighlighted: Bool, highlightColor: UIColor)
 }
 
@@ -26,15 +25,6 @@ extension UIBarButtonItem: PullToReachTarget {
         if let actionSelector = self.action {
             _ = self.target?.perform(actionSelector)
         }
-    }
-
-    @objc
-    open func resetStyle() {
-        guard let selectionIndicator = addSelectionIndicatorView() else { return }
-
-        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: [], animations: {
-            selectionIndicator.transform = CGAffineTransform(scaleX: 0, y: 0)
-        })
     }
 
     @objc
@@ -94,11 +84,6 @@ extension UIControl: PullToReachTarget {
         guard let target = self.allTargets.first as NSObject? else { return }
         guard let selectorName = self.actions(forTarget: target, forControlEvent: .touchUpInside)?.first else { return }
         target.perform(NSSelectorFromString(selectorName))
-    }
-
-    @objc
-    open func resetStyle() {
-        self.transform = .identity
     }
 
     @objc
