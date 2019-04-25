@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'PullToReach_Example' do
+  pod 'PullToReach', :path => '../'
+
+  target 'PullToReach_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
