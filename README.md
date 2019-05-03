@@ -7,7 +7,7 @@
 
 PullToReach is a simple drag-and-drop solution for implementing the pull-to-reach functionality seen in the music app [Soor](http://soor.app) by [Tanmay](https://twitter.com/tanmays).
 
-![Screen recording](https://cdn.dribbble.com/users/793057/screenshots/4089014/iphone-x-pull-to-refresh.gif)
+![Screen recording](pull_to_reach.gif)
 
 ## 🏃‍♂️ Getting started
 
