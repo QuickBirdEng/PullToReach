@@ -6,7 +6,7 @@
 //  Copyright © 2019 QuickBird Studios GmbH. All rights reserved.
 //
 
-import Foundation
+import PullToReach
 
 import UIKit
 

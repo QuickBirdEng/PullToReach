@@ -6,6 +6,7 @@
 //  Copyright © 2019 QuickBird Studios GmbH. All rights reserved.
 //
 
+import PullToReach
 import UIKit
 
 class TeamMembersViewController: UITableViewController, PullToReach {
