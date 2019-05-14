@@ -20,4 +20,16 @@ extension UIView {
         }
     }
 
+    func firstSubview<T>(ofType type: T.Type) -> T? {
+        if let self = self as? T { return self }
+
+        for subview in subviews {
+            if let firstSubview = subview.firstSubview(ofType: T.self) {
+                return firstSubview
+            }
+        }
+
+        return nil
+    }
+
 }

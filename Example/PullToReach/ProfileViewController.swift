@@ -12,6 +12,8 @@ import UIKit
 
 class ProfileViewController: UITableViewController, PullToReach {
 
+    // MARK: - Overrides
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

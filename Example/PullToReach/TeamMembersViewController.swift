@@ -11,12 +11,26 @@ import UIKit
 
 class TeamMembersViewController: UITableViewController, PullToReach {
 
+    // MARK: - Views
+
+    private lazy var addBarButtonItem =
+        UIBarButtonItem(image: UIImage(named: "add"), style: .plain,
+                        target: self, action: #selector(addItem))
+
+    private lazy var searchBarButtonItem =
+        UIBarButtonItem(image: UIImage(named: "search"), style: .plain,
+                        target: self, action: #selector(searchItems))
+
+    private lazy var refreshBarButtonItem =
+        UIBarButtonItem(image: UIImage(named: "refresh"), style: .plain,
+                        target: self, action: #selector(reloadItems))
+
+    // MARK: - Stored properties
+
     private let searchController = UISearchController(searchResultsController: nil)
     private var dataSource = TeamMembersDataSource()
 
-    private lazy var addBarButtonItem = UIBarButtonItem(image: UIImage(named: "add"), style: .plain, target: self, action: #selector(addItem))
-    private lazy var searchBarButtonItem = UIBarButtonItem(image: UIImage(named: "search"), style: .plain, target: self, action: #selector(searchItems))
-    private lazy var refreshBarButtonItem = UIBarButtonItem(image: UIImage(named: "refresh"), style: .plain, target: self, action: #selector(reloadItems))
+    // MARK: - Overrides
 
     override func viewDidLoad() {
         super.viewDidLoad()

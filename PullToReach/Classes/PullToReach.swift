@@ -29,6 +29,7 @@ public extension PullToReach {
 
                 for target in affectedTargets {
                     target.applyStyle(isHighlighted: false, highlightColor: highlightColor)
+                    target.removeHighlight()
                 }
 
                 return
@@ -38,6 +39,8 @@ public extension PullToReach {
 
             let percent = min(modifiedOffset / maxOffset, 0.99)
             let currentSelectedIndex = Int(percent * CGFloat(affectedTargets.count))
+
+            print(percent, currentSelectedIndex)
 
             if didRelease {
                 affectedTargets[currentSelectedIndex].callSelector()
@@ -73,11 +76,12 @@ public extension PullToReach {
                              direction: PTRDirection = .rightToLeft,
                              highlightColor: UIColor = UIColor.black.withAlphaComponent(0.1)) {
         let barButtonItems: [UIBarButtonItem]
+
         switch direction {
         case .leftToRight:
-            barButtonItems = (navigationItem.leftBarButtonItems ?? []) + (navigationItem.rightBarButtonItems ?? [])
+            barButtonItems = (navigationItem.leftBarButtonItems ?? []) + (navigationItem.rightBarButtonItems ?? []).reversed()
         case .rightToLeft:
-            barButtonItems = (navigationItem.rightBarButtonItems ?? []) + (navigationItem.leftBarButtonItems ?? [])
+            barButtonItems = (navigationItem.rightBarButtonItems ?? []) + (navigationItem.leftBarButtonItems ?? []).reversed()
         }
 
         activatePullToReach(affectedTargets: barButtonItems, highlightColor: highlightColor)

@@ -8,13 +8,12 @@
 
 import UIKit
 
-private let selectionIndicatorTag = 123
-
 // MARK: - PullToReachTarget
 
 public protocol PullToReachTarget {
     func callSelector()
     func applyStyle(isHighlighted: Bool, highlightColor: UIColor)
+    func removeHighlight()
 }
 
 // MARK: - UIBarButtonItem: PullToReachTarget
@@ -25,6 +24,10 @@ extension UIBarButtonItem: PullToReachTarget {
         if let actionSelector = self.action {
             _ = self.target?.perform(actionSelector)
         }
+    }
+
+    public func removeHighlight() {
+        removeSelectionIndicatorView()
     }
 
     @objc
@@ -42,13 +45,15 @@ extension UIBarButtonItem: PullToReachTarget {
         guard let nestedView = view.subviews.first else { return }
         let targetPosition1 = view.convert(nestedView.center, to: navigationBar)
         let targetPosition2 = view.superview?.convert(view.center, to: navigationBar) ?? .zero
-        let targetPosition = CGPoint(x: (targetPosition1.x + targetPosition2.x) / 2.0, y: (targetPosition1.y + targetPosition2.y) / 2.0)
+        let targetPosition = CGPoint(x: (targetPosition1.x + targetPosition2.x) / 2.0,
+                                     y: (targetPosition1.y + targetPosition2.y) / 2.0)
 
         if selectionIndicator.center == .zero {
             selectionIndicator.center = targetPosition
         }
 
-        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: [], animations: {
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8,
+                       initialSpringVelocity: 0.5, options: [], animations: {
             view.transform = CGAffineTransform(scaleX: scale, y: scale)
 
             if isHighlighted {
@@ -59,16 +64,21 @@ extension UIBarButtonItem: PullToReachTarget {
         }, completion: nil)
     }
 
+    private func removeSelectionIndicatorView() {
+        guard let view = self.value(forKey: "view") as? UIView else { return }
+        guard let navigationBar = view.firstSuperview(ofType: UINavigationBar.self) else { return }
+        navigationBar.firstSubview(ofType: SelectionIndicatorView.self)?.removeFromSuperview()
+    }
+
     private func addSelectionIndicatorView() -> UIView? {
         guard let view = self.value(forKey: "view") as? UIView else { return nil }
         guard let navigationBar = view.firstSuperview(ofType: UINavigationBar.self) else { return nil }
 
-        if let selectionIndicator = navigationBar.viewWithTag(selectionIndicatorTag) {
+        if let selectionIndicator = navigationBar.firstSubview(ofType: SelectionIndicatorView.self) {
             return selectionIndicator
         } else {
-            let selectionIndicator = UIView()
+            let selectionIndicator = SelectionIndicatorView()
             selectionIndicator.clipsToBounds = true
-            selectionIndicator.tag = selectionIndicatorTag
             navigationBar.insertSubview(selectionIndicator, at: 1)
             return selectionIndicator
         }
@@ -81,10 +91,17 @@ extension UIBarButtonItem: PullToReachTarget {
 extension UIControl: PullToReachTarget {
 
     public func callSelector() {
-        guard let target = self.allTargets.first as NSObject? else { return }
-        guard let selectorName = self.actions(forTarget: target, forControlEvent: .touchUpInside)?.first else { return }
-        target.perform(NSSelectorFromString(selectorName))
+        let callees = allTargets.flatMap { target -> [(NSObject, String)] in
+            actions(forTarget: target as NSObject, forControlEvent: .touchUpInside)?
+                .map { (target as NSObject, $0) } ?? []
+        }
+
+        for (target, selector) in callees {
+            target.perform(NSSelectorFromString(selector))
+        }
     }
+
+    public func removeHighlight() {}
 
     @objc
     open func applyStyle(isHighlighted: Bool, highlightColor: UIColor) {

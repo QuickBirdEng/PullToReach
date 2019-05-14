@@ -10,6 +10,7 @@
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
+		9B4FB70D228B4AC000136603 /* TeamMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4FB70C228B4AC000136603 /* TeamMember.swift */; };
 		D69CC6758A7FC75D9D5412F9 /* Pods_PullToReach_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 547CA4005348FFAD0D1F4C56 /* Pods_PullToReach_Example.framework */; };
 		F6FAF4112271B94500664A86 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FAF40E2271B94500664A86 /* AddViewController.swift */; };
 		F6FAF4142271B94B00664A86 /* TeamMemberDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FAF4132271B94B00664A86 /* TeamMemberDataSource.swift */; };
@@ -30,6 +31,7 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		7FCD2A828D2DF7DAA5B19E1F /* Pods_PullToReach_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PullToReach_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD1CDB93F6FA665FF33BEA0 /* Pods-PullToReach_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PullToReach_Example.release.xcconfig"; path = "Target Support Files/Pods-PullToReach_Example/Pods-PullToReach_Example.release.xcconfig"; sourceTree = "<group>"; };
+		9B4FB70C228B4AC000136603 /* TeamMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMember.swift; sourceTree = "<group>"; };
 		D75CF7F9BC8E2C9EC99AE7B4 /* Pods-PullToReach_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PullToReach_Example.debug.xcconfig"; path = "Target Support Files/Pods-PullToReach_Example/Pods-PullToReach_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		DC06F21EDD0E1F7CC6B26854 /* Pods-PullToReach_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PullToReach_Tests.release.xcconfig"; path = "Target Support Files/Pods-PullToReach_Tests/Pods-PullToReach_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		F6FAF40E2271B94500664A86 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
@@ -74,7 +76,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				F6FAF4162271B96200664A86 /* View Controllers */,
-				F6FAF4152271B95A00664A86 /* Data Sources */,
+				F6FAF4152271B95A00664A86 /* Model */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
@@ -121,12 +123,13 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		F6FAF4152271B95A00664A86 /* Data Sources */ = {
+		F6FAF4152271B95A00664A86 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				F6FAF4132271B94B00664A86 /* TeamMemberDataSource.swift */,
+				9B4FB70C228B4AC000136603 /* TeamMember.swift */,
 			);
-			name = "Data Sources";
+			name = Model;
 			sourceTree = "<group>";
 		};
 		F6FAF4162271B96200664A86 /* View Controllers */ = {
@@ -263,6 +266,7 @@
 			files = (
 				F6FAF4112271B94500664A86 /* AddViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				9B4FB70D228B4AC000136603 /* TeamMember.swift in Sources */,
 				F6FAF41A2271C79700664A86 /* ProfileViewController.swift in Sources */,
 				F6FAF4142271B94B00664A86 /* TeamMemberDataSource.swift in Sources */,
 				F6FAF4192271C79400664A86 /* TeamMembersViewController.swift in Sources */,
