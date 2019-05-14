@@ -11,7 +11,13 @@ import PullToReach
 
 class AddViewController: UITableViewController, PullToReach {
 
-    private lazy var refreshBarButtonItem = UIBarButtonItem(image: UIImage(named: "close"), style: .plain, target: self, action: #selector(closeView))
+    // MARK: - Views
+
+    private lazy var refreshBarButtonItem =
+        UIBarButtonItem(image: UIImage(named: "close"), style: .plain,
+                        target: self, action: #selector(closeView))
+
+    // MARK: - Overrides
 
     override func viewDidLoad() {
         super.viewDidLoad()

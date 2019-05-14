@@ -12,6 +12,7 @@
 		6BDF5010362617BF977C978FACE9F2D6 /* UIView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7340A49AAEBD23E1377E130E1704754 /* UIView+Helper.swift */; };
 		8721685066516E7DD45FAF624E20FA4A /* PullToReachObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F50E2462931C21FD1C045DF30B3121 /* PullToReachObserver.swift */; };
 		90D928F32E48FD7E1AF88DC660AF6B4C /* Pods-PullToReach_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E81E68051F957BAD83F2569B490576D4 /* Pods-PullToReach_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9B4FB710228B4EAE00136603 /* SelectionIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4FB70E228B4D5B00136603 /* SelectionIndicatorView.swift */; };
 		A03D0EEDA623259336B83E7890A66388 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF2A2B0720AE923C22BED3192888BE0 /* UIKit.framework */; };
 		C8DBFAD876A2F388F9556491410C5C99 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CB39E715FBCDAA142E6513E126200A /* Foundation.framework */; };
 		D1115D670C9C7103406942DFB1BE1FBC /* PullToReach-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 01A4D4E91AAA01CF3FBB654D0D336425 /* PullToReach-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -42,6 +43,7 @@
 		63F6792EFBA3A3456330FD011005453B /* PullToReach.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PullToReach.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85F50E2462931C21FD1C045DF30B3121 /* PullToReachObserver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PullToReachObserver.swift; path = PullToReach/Classes/PullToReachObserver.swift; sourceTree = "<group>"; };
 		87387298B5A965F4EBE4400FFBB738C8 /* Pods-PullToReach_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PullToReach_Example.modulemap"; sourceTree = "<group>"; };
+		9B4FB70E228B4D5B00136603 /* SelectionIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SelectionIndicatorView.swift; path = PullToReach/Classes/SelectionIndicatorView.swift; sourceTree = "<group>"; };
 		9C0CEA4D6D67895AF623B0304EC57E86 /* Pods-PullToReach_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PullToReach_Example-dummy.m"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E84521803AB19718F498200BE3ED687 /* PullToReach.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PullToReach.xcconfig; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				F538B4842D3617F3A4332B92530ADCA6 /* PullToReach.swift */,
 				85F50E2462931C21FD1C045DF30B3121 /* PullToReachObserver.swift */,
 				E1CB06D9360BF8A22144EB74953F837E /* PullToReachTarget.swift */,
+				9B4FB70E228B4D5B00136603 /* SelectionIndicatorView.swift */,
 				F7340A49AAEBD23E1377E130E1704754 /* UIView+Helper.swift */,
 				5B4CC39E94AD735A4FEBB0FCF9F93966 /* Pod */,
 				4034290FD338E14BBE5D3053B22F9C52 /* Support Files */,
@@ -257,6 +260,9 @@
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 1020;
 				TargetAttributes = {
+					3F4B95AB00ACE29CF24C7435D1D1AF9C = {
+						LastSwiftMigration = 1020;
+					};
 					A3E3C8E94C7A072A97ECA4E31380E96C = {
 						LastSwiftMigration = 1020;
 					};
@@ -312,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1E539C690182A3301850F20F2E5C19C /* PullToReach-dummy.m in Sources */,
+				9B4FB710228B4EAE00136603 /* SelectionIndicatorView.swift in Sources */,
 				236E1562336E6D9E50C5050ADB060E6C /* PullToReach.swift in Sources */,
 				8721685066516E7DD45FAF624E20FA4A /* PullToReachObserver.swift in Sources */,
 				DD873C3F12D9A5D4A09F4AAD4A13F9DB /* PullToReachTarget.swift in Sources */,
@@ -336,6 +343,7 @@
 			baseConfigurationReference = F761C7F386318437EF0D57219F8B2958 /* Pods-PullToReach_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -359,6 +367,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -560,6 +570,7 @@
 			baseConfigurationReference = FB1B8A69FFDA4DD2D149E54C297AFA04 /* Pods-PullToReach_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -583,6 +594,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";

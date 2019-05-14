@@ -11,13 +11,16 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
+    // MARK: - Stored properties
+
+    let window = UIWindow(frame: UIScreen.main.bounds)
+
+    // MARK: - UIApplicationDelegate
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.makeKeyAndVisible()
 
-        window?.rootViewController = UINavigationController(rootViewController: TeamMembersViewController())
+        window.rootViewController = UINavigationController(rootViewController: TeamMembersViewController())
+        window.makeKeyAndVisible()
 
         UINavigationBar.appearance().tintColor = .black
         UINavigationBar.appearance().prefersLargeTitles = true

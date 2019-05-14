@@ -8,24 +8,10 @@
 
 import UIKit
 
-struct TeamMember {
-    let firstName: String
-    let lastName: String
-    let imageName: String
-
-    var email: String {
-        return "\(firstName.lowercased()).\(lastName.lowercased())@quickbirdstudios.com"
-    }
-
-    var image: UIImage? {
-        return UIImage(named: imageName)
-    }
-}
-
 private let allTeamMembers = [
     TeamMember(firstName: "Stefan", lastName: "Kofler", imageName: "Stefan_Kofler"),
     TeamMember(firstName: "Malte", lastName: "Bucksch", imageName: "Malte_Bucksch"),
-    TeamMember(firstName: "Sabastian", lastName: "Sellmair", imageName: "Sebastian_Sellmair"),
+    TeamMember(firstName: "Sebastian", lastName: "Sellmair", imageName: "Sebastian_Sellmair"),
     TeamMember(firstName: "Julian", lastName: "Bissekkou", imageName: "Julian_Bissekkou"),
     TeamMember(firstName: "Klaus", lastName: "Niedermair", imageName: "Klaus_Niedermair"),
     TeamMember(firstName: "Ghulam", lastName: "Nasir", imageName: "Ghulam_Nasir"),
@@ -41,7 +27,11 @@ private let allTeamMembers = [
 
 class TeamMembersDataSource: NSObject, UITableViewDataSource {
 
+    // MARK: - Stored properties
+
     private let teamMembers = allTeamMembers.shuffled()
+
+    // MARK: - UITableViewDataSource
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return teamMembers.count
