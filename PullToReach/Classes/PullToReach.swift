@@ -40,8 +40,6 @@ public extension PullToReach {
             let percent = min(modifiedOffset / maxOffset, 0.99)
             let currentSelectedIndex = Int(percent * CGFloat(affectedTargets.count))
 
-            print(percent, currentSelectedIndex)
-
             if didRelease {
                 affectedTargets[currentSelectedIndex].callSelector()
                 heavyFeedbackGenerator.impactOccurred()
