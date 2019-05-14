@@ -34,8 +34,8 @@
 		DC06F21EDD0E1F7CC6B26854 /* Pods-PullToReach_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PullToReach_Tests.release.xcconfig"; path = "Target Support Files/Pods-PullToReach_Tests/Pods-PullToReach_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		F6FAF40E2271B94500664A86 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		F6FAF4132271B94B00664A86 /* TeamMemberDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamMemberDataSource.swift; sourceTree = "<group>"; };
-		F6FAF4172271B96200664A86 /* TeamMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TeamMembersViewController.swift; path = "../../../PullToReach_OLD/PullToReach/View Controllers/TeamMembersViewController.swift"; sourceTree = "<group>"; };
-		F6FAF4182271B96200664A86 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = "../../../PullToReach_OLD/PullToReach/View Controllers/ProfileViewController.swift"; sourceTree = "<group>"; };
+		F6FAF4172271B96200664A86 /* TeamMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMembersViewController.swift; sourceTree = "<group>"; };
+		F6FAF4182271B96200664A86 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,7 +174,7 @@
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = 77E79NGPCV;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
