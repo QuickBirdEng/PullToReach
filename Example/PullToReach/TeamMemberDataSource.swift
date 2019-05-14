@@ -11,7 +11,7 @@ import UIKit
 private let allTeamMembers = [
     TeamMember(firstName: "Stefan", lastName: "Kofler", imageName: "Stefan_Kofler"),
     TeamMember(firstName: "Malte", lastName: "Bucksch", imageName: "Malte_Bucksch"),
-    TeamMember(firstName: "Sabastian", lastName: "Sellmair", imageName: "Sebastian_Sellmair"),
+    TeamMember(firstName: "Sebastian", lastName: "Sellmair", imageName: "Sebastian_Sellmair"),
     TeamMember(firstName: "Julian", lastName: "Bissekkou", imageName: "Julian_Bissekkou"),
     TeamMember(firstName: "Klaus", lastName: "Niedermair", imageName: "Klaus_Niedermair"),
     TeamMember(firstName: "Ghulam", lastName: "Nasir", imageName: "Ghulam_Nasir"),
