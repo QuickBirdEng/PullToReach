@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PullToReach'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'PullToReach is a simple drag-and-drop solution for implementing pull-to-reach.'
   s.module_name      = 'PullToReach'
 
