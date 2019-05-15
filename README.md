@@ -34,17 +34,17 @@ If your ViewController is contained in an `UINavigationController` you can activ
 
 ## 🖌 Custom styling
 
-#### Changing higlight color
+#### Changing highlight color
 
-If you want to change the higlight color you can just additionally specify the color when activating pull-to-reach.
+If you want to change the highlight color, you can specify it when activating pull-to-reach.
 
 ```swift
 self.activatePullToReach(on: navigationItem, highlightColor: .red)
 ```
 
-#### Completly custom behavior
+#### Completely custom behavior
 
-By overriding the `applyStyle` function you can define completly custom style. All the changes between states will be animated by default.
+By overriding the `applyStyle` function you can define completely custom style. All the changes between states will be animated by default.
 
 ```swift
 class ScalingButton: UIButton {
@@ -59,7 +59,7 @@ class ScalingButton: UIButton {
 
 ## 🚴‍♂️ Usage outside of NavigationBar
 
-Pull-To-Reach can not only be activated for the navigation items, but also for every `UIControl` independent from it position or functionality. This can be very helpful if you have non-standard views with your own controls. To define your style you can override `applyStyle` as seen above.
+Pull-To-Reach can not only be activated for the navigation items, but also for every `UIControl` independently from its position or functionality. This can be very helpful when you have non-standard views with your own controls. To define your style, you can override `applyStyle` as seen above.
 
 ## 🛠 Installation
 
