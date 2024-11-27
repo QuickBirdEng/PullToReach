@@ -1,13 +1,12 @@
 # PullToReach 👆
 
-[![CI Status](https://img.shields.io/travis/quickbirdstudios/PullToReach.svg?style=flat)](https://travis-ci.org/quickbirdstudios/PullToReach)
 [![Version](https://img.shields.io/cocoapods/v/PullToReach.svg?style=flat)](https://cocoapods.org/pods/PullToReach)
 [![License](https://img.shields.io/cocoapods/l/PullToReach.svg?style=flat)](https://cocoapods.org/pods/PullToReach)
 [![Platform](https://img.shields.io/cocoapods/p/PullToReach.svg?style=flat)](https://cocoapods.org/pods/PullToReach)
 
 PullToReach is a simple drag-and-drop solution for implementing the pull-to-reach functionality seen in the music app [Soor](http://soor.app) by [Tanmay](https://twitter.com/tanmays). This allows your users with big phones to reach the content on the top of the display easily.
 
-![Screen recording](http://quickbirdstudios.com/files/pull-to-reach/pull_to_reach.gif)
+![Screen recording](./pull_to_reach.gif)
 
 ## 🏃‍♂️ Getting started
 
