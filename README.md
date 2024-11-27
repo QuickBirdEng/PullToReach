@@ -7,7 +7,7 @@
 
 PullToReach is a simple drag-and-drop solution for implementing the pull-to-reach functionality seen in the music app [Soor](http://soor.app) by [Tanmay](https://twitter.com/tanmays). This allows your users with big phones to reach the content on the top of the display easily.
 
-![Screen recording](http://quickbirdstudios.com/files/pull-to-reach/pull_to_reach.gif)
+![Screen recording](https://github.com/QuickBirdEng/PullToReach/blob/2fb7f0210646f713213e49c454f7956ce4c5b3e7/pull_to_reach.gif)
 
 ## 🏃‍♂️ Getting started
 
